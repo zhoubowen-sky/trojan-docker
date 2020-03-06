@@ -9,6 +9,11 @@ ENV TROJAN_URL=https://github.com/trojan-gfw/trojan.git
 WORKDIR /opt
 ADD . .
 
+# alpine update
+RUN apk --no-cache update && apk --no-cache upgrade
+# add start-stop-daemon and python runtime
+RUN apk --no-cache add monit openrc python
+
 RUN mkdir -p /usr/local/sbin
 # build trojan bin file
 RUN apk add --no-cache --virtual .build-deps \
