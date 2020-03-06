@@ -1,5 +1,5 @@
 # Trojan-docker
-An alpine-based docker image with shadowsocks + kcptun, brook trojan and shadowsocksr for crossing the GFW.
+An alpine-based docker image with trojan for crossing the GFW.
 
 ## Step for usage
 - 1、Prepare a cloud server with CentOS7 for building proxy services.(vultr, do or bwh...)
@@ -11,20 +11,12 @@ An alpine-based docker image with shadowsocks + kcptun, brook trojan and shadows
   `systemctl start docker`<br>
   `systemctl enable docker`<br>
 - 3、Pull this image<br>
-   `docker pull zhoubowen123/shadowsocks-kcptun`
+   `docker pull zhoubowen123/trojan-docker`
 - 4、Create a container<br>
-  `docker run --privileged --restart=always -tid -p 443:443/udp -p 443:443/tcp -p 4000:4000/udp -p 4000:4000/tcp zhoubowen123/shadowsocks-kcptun /sbin/init`<br>
+  `docker run --privileged --restart=always -tid -p 443:443/udp -p 443:443/tcp -v /config:/config zhoubowen123/trojan-docker /sbin/init`<br>
   
 - 5、Emmmmm...<br>
   Now the server is finished. You can access Google through ss, ssr or brook clients, here are parameters for these clients.
-
-## Default parameters for client
-### Trojan
-TROJAN参数名 | 参数取值
--: | :-
-服务器地址(ip) | 代理服务器IP
-端口(port) | 443
-密码(passwd) | qazwsxedc
 
 ## 相关端口使用情况
 
