@@ -19,9 +19,9 @@ An alpine-based docker image with trojan for crossing the GFW.
 - 6、Emmmmm...<br>
   Now the server is finished. You can access Google through ss, ssr or brook clients, here are parameters for these clients.
 
-## 相关端口使用情况
+## Port
 
-应用名称 | 所用端口
+Application | Port
 :-: | :-:
 trojan | 443
 http | 80
